@@ -1,0 +1,14 @@
+.backCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    width: 85px;
+    border-radius: 15px;
+    padding: 20px 10px;
+    /* background: linear-gradient(225deg,rgba(2, 0, 36, 1) 0%, rgba(51, 51, 51, 1) 100%); */
+    background-color: #818181;
+    position: relative;
+    border: 5px solid #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}

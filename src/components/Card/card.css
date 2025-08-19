@@ -1,0 +1,62 @@
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    width: 135px;
+    border-radius: 15px;
+    padding: 20px 10px;
+    background-color: #171717;
+    position: relative;
+    transition: opacity ease .3s;
+    border: 5px solid #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card-bigger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 155px;
+    border-radius: 15px;
+    padding: 20px 10px;
+    background-color: #171717;
+    position: relative;
+    transition: opacity ease .3s;
+    border: 5px solid #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.card_details {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+.card_details > svg {
+    width: 20px;
+}
+
+.card_details > p{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card > svg{
+    width: 50px;
+}
+
+.card-bigger > svg{
+    width: 50px;
+}

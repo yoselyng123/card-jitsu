@@ -1,0 +1,99 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #111111;
+}
+
+.game{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.winning-display{
+  display: flex;
+  padding: 50px 200px;
+  justify-content: flex-start;
+}
+
+.winning-badges{
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.left{
+  justify-content: flex-start !important;
+}
+
+.right{
+  justify-content: flex-end !important;
+}
+
+.badge-col{
+  position: relative;
+  width: 61px;
+}
+
+.badge-item{
+  position: absolute;
+  left: 10px;
+}
+
+.cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.bottom{
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 30vh;
+  align-items: flex-end;
+  /* border-top: 10px solid #fff; */
+}
+
+/* .timer{
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #AD3201;
+  border: 10px solid #fff;
+
+  & span {
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+  }
+} */
+
+.cards-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+.cards-battle{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
