@@ -53,7 +53,6 @@ export default class Game{
         this.playedCardsByComputer.push(randomCard);
         // Asignar carta seleccionada por la computadora
         this.selectedComputerCard = randomCard;
-        console.log(`RANDOM CARD ${randomCard}`)
         return randomCard
     }
 
@@ -75,9 +74,6 @@ export default class Game{
     }
 
     battleCards(playerCard, computerCard){
-        
-        console.log(`COMPUTER CARD: ${computerCard}`);
-        console.log(`PLAYER CARD: ${playerCard}`);
 
         if(playerCard.element === computerCard.element){ 
             if(playerCard.number > computerCard.number){
@@ -115,6 +111,13 @@ export default class Game{
 
     resetRoundTime(){
         this.time = 20
+    }
+
+    reset(){
+        //TODO: ???
+        this.time = 20;
+        this.wonRoundsComputer = []
+        this.wonRoundsPlayer = []
     }
 
     getPlayerDeck(){
@@ -166,10 +169,10 @@ export default class Game{
             }, {});
 
             if(Object.keys(grouppedElementsComputer).length === 3){
-                alert("COMPUTER WINS")
+                return "Computer Wins"
             }else{
                 //TODO: NO ESTA MOSTRANDO CUANDO EL PLAYER GANA SOLO CUANDO COMPUTER GANA
-                let grouppedElementsPlayer = this.wonRoundsComputer.reduce((acc, item) => {
+                let grouppedElementsPlayer = this.wonRoundsPlayer.reduce((acc, item) => {
                     if (!acc[item.element]) {
                     acc[item.element] = [];
                     }
@@ -178,12 +181,12 @@ export default class Game{
                 }, {});
 
                 if(Object.keys(grouppedElementsPlayer).length === 3){
-                    alert("PLAYER WINS")
+                    return "Player Wins"
                 }
             }
         }
 
-        return false;
+        return null;
     }
 
     //TODO: Round timer

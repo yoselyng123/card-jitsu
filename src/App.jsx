@@ -12,6 +12,7 @@ function App() {
   const [selectedPlayerCard, setSelectedPlayerCard] = useState(null);
   const [isBattleInProgress, setIsBattleInProgress] = useState(false);
   const [isWinner, setIsWinner] = useState(null)
+  const [roundInProgress, setRoundInProgress] = useState(false);
   
   const gameRef = useRef(null);
   if (!gameRef.current) gameRef.current = new Game();
@@ -44,24 +45,42 @@ function App() {
     setComputerCards([...game.getComputerHandDeck()]);
     setSelectedComputerCard(game.getSelectedComputerCard());
     setSelectedPlayerCard(game.getSelectedPlayerCard());
-  }
+  }  
 
   function handlePlay(card) {
     setIsBattleInProgress(true)
+    setRoundInProgress(true)
     game.pickPlayerCardFromPlayerHandDeck(card);
     let computerCard = game.pickRandomCardFromComputerHandDeck();
     syncFromGame();
     setTimeout(() => {
       game.battleCards(card, computerCard)
-      game.checkForWinner()
       setSelectedComputerCard(null);
       setSelectedPlayerCard(null);
       setIsBattleInProgress(false);
-    }, 3000);
+      setIsWinner(game.checkForWinner())
+      if (game.checkForWinner()) {
+        setIsBattleInProgress(true);
+      }
+    }, 1000);
+    
   }
 
   return (
     <div className='game'>
+      {isWinner && (
+        <button className='newGameBtn'>New Game</button>
+      )}
+      {isWinner && isWinner === 'Computer Wins' && 
+        (<div className='won-msg'>
+          <p>Computer Wins</p>
+        </div>)}
+
+      {isWinner && isWinner === 'Player Wins' && 
+        (<div className='won-msg'>
+          <p>Player Wins</p>
+        </div>)}
+      
       <div className='winning-display'>
         <div className='winning-badges left'>
           {Object.entries(groupedWonRoundsComputer).map(([_, list], index) => (

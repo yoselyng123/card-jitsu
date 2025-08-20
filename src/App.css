@@ -4,14 +4,47 @@
   box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Knight Warrior';
+    src: url('./fonts/KnightWarrior-w16n8.otf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 body{
   background-color: #111111;
+}
+
+.won-msg > p{
+  font-family: 'Knight Warrior';
+  color: white;
+  font-size: 80px;
+  letter-spacing: 4px;
+  position: absolute;
+  top: 40%;
+  left: 38%;
+  transition: all ease .5s;
+  animation: scaleText .5s;
+  text-transform: uppercase;
+}
+
+@keyframes scaleText {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .game{
   display: flex;
   height: 100vh;
   flex-direction: column;
+  position: relative;
 }
 
 .winning-display{
@@ -96,4 +129,28 @@ body{
   align-items: center;
   justify-content: center;
   gap: 50px;
+}
+
+.newGameBtn{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  min-width: 200px;
+  background-color: #159F2F;
+  border-radius: 10px;
+  top: 50%;
+  left: 44%;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: all ease .3s;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.newGameBtn:hover{
+  background-color: #59C43A;
 }
