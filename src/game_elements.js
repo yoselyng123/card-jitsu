@@ -10,5 +10,3 @@ export const BELTS = ['White', 'Yellow', 'Orange', 'Green', 'Blue', 'Red', 'Purp
 export const ELEMENTS = ['Fire', 'Water', 'Snow'];
 export const NUMBERS = [2,3,4,5,6,7,8,9,10,11,12];
 export const COLORS = ['#EA3918', '#0046AC', '#FDD203', '#61B946', '#F17300', '#A997DF']
-
-

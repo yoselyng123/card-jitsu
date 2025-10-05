@@ -114,10 +114,24 @@ export default class Game{
     }
 
     reset(){
-        //TODO: ???
         this.time = 20;
         this.wonRoundsComputer = []
         this.wonRoundsPlayer = []
+        // RESET PLAYED CARDS IN DECK
+        this.playerDeck.resetDeck();
+        this.computerDeck.resetDeck();
+        // HAND DECK (5 CARDS IN ROUND)
+        this.playerHandDeck = this.setPlayerHandDeck(this.playerDeck);
+        this.computerHandDeck = this.setPlayerHandDeck(this.computerDeck);
+        // WINNING CARDS
+        this.wonRoundsComputer = [];
+        this.wonRoundsPlayer = [];
+        // PLAYED CARDS
+        this.playedCardsByPlayer = [];
+        this.playedCardsByComputer = [];
+        // Played Card by Round
+        this.selectedPlayerCard = null;
+        this.selectedComputerCard = null;
     }
 
     getPlayerDeck(){

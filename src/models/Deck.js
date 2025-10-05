@@ -41,8 +41,12 @@ export default class Deck{
             this.unplayedCards.splice(i, 1);
             return drawnCard;
         } else {
-            //TODO: Consider taking cards from already played pile
-            
+            // RESET UNPLAYED CARDS
+            this.unplayedCards = this.cards;
+            let i = Math.floor(Math.random() * this.unplayedCards.length);
+            let drawnCard = this.unplayedCards[i];
+            this.unplayedCards.splice(i, 1);
+            return drawnCard;
         }
         
     }
